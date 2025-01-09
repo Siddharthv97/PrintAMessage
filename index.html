@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Print a message</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            height: 100vh;
+            background-color: #F2F9FF;
+            display: grid;
+            place-items: center;
+            font-family: "Poppins", serif;
+            font-weight: normal;
+        }
+
+        main {
+            width: 400px;
+            height: 400px;
+            background-color: #fff;
+            box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+            border-radius: 6px;
+        }
+
+        form {
+            width: 350px;
+            border-radius: 8px;
+            margin: auto;
+            margin-top: 45px;
+            padding: 12px;
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+
+
+
+            input {
+                width: 100%;
+                height: 66px;
+                padding: 8px;
+                font-size: 22px;
+                border-radius: 8px;
+                border: none;
+                outline: none;
+                background-color: #edf2f4;
+                text-align: center;
+            }
+
+            button {
+                padding: 12px 24px;
+                border-radius: 8px;
+                border: none;
+                background-color: #64b5f6;
+                color: #fff;
+                font-size: 18px;
+
+                &:hover {
+                    background-color: #42a5f5;
+                }
+            }
+        }
+
+        .display {
+            width: 90%;
+            height: 40%;
+            margin: auto;
+            margin-top: 16px;
+            border-radius: 8px;
+            display: grid;
+            place-items: center;
+
+            #message {
+                text-transform: capitalize;
+
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <main>
+        <form action="#">
+            <input type="text" name="" id="inputfield" autocomplete="off" placeholder="Enter your message">
+            <label for="inputfield"></label>
+            <button id="btn">Submit</button>
+        </form>
+        <div class="display">
+            <h2 id="message"></h2>
+        </div>
+    </main>
+
+    <script>
+        const inputBox = document.getElementById("inputfield");
+        const submitBtn = document.getElementById("btn");
+        const messageBox = document.getElementById("message");
+
+        submitBtn.addEventListener("click", () => {
+
+            // if(inputBox.value == "" || inputBox.value == "  "){
+            //     alert("You entred empty value.. ");
+            // }
+            // else{
+            //     messageBox.innerText = inputBox.value;
+            // }
+            
+
+            if(inputBox.value !== ""){
+                messageBox.innerText = inputBox.value;
+                inputBox.value = "";
+            }else{
+
+                messageBox.innerText = "Input Box Cannot be Empty"
+                // alert("Input Box Cannot be Empty")
+            }
+
+        })
+    </script>
+</body>
+
+</html>
